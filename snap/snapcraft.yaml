@@ -1,9 +1,9 @@
 name: libvips
 version: v8.10.5
 grade: stable
-summary: A precompiled snap for libvips/libvips
+summary: A precompiled snap for https://github.com/libvips/libvips
 description: >
-  A precompiled snap for libvips/libvips
+  A precompiled snap for https://github.com/libvips/libvips
 base: core18
 confinement: strict
 
