@@ -1,5 +1,6 @@
 name: libvips
 version: v8.10.5
+grade: stable
 summary: A precompiled snap for libvips/libvips
 description: >
   A precompiled snap for libvips/libvips
