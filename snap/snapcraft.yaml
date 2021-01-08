@@ -9,7 +9,7 @@ confinement: strict
 
 parts:
   libvips:
-    plugin: nil
+    plugin: dump
     build-packages:
       - git
       - sqlite3
