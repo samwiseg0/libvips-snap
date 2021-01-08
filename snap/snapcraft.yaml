@@ -44,6 +44,7 @@ parts:
       git clone --depth 1 --branch v8.10.5 https://github.com/libvips/libvips.git
       cd libvips && ./autogen.sh
       make -j$(nproc) && make install
+      cp -R $SNAPCRAFT_PART_BUILD/. $SNAPCRAFT_PART_INSTALL/
     stage-packages:
       - libaec0
       - libcairo2
