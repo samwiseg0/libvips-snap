@@ -9,10 +9,7 @@ confinement: strict
 
 parts:
   libvips:
-    plugin: autotools
-    source: https://github.com/libvips/libvips.git
-    source-branch: v8.10.5
-    source-depth: 1
+    plugin: nil
     build-packages:
       - git
       - sqlite3
