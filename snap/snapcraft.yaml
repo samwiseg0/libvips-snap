@@ -36,6 +36,17 @@ parts:
       - libgif-dev
       - python-gi-dev
       - libgirepository1.0-dev
+    source: .
+    build-environment:
+      - VIPSHOME: "/usr/local"
+      - PATH: "$VIPSHOME/bin:$SNAPCRAFT_PART_BUILD/node_modules/.bin:$SNAPCRAFT_PART_BUILD/../npm/bin:$PATH"
+      - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$VIPSHOME/lib"
+      - PKG_CONFIG_PATH: "$PKG_CONFIG_PATH:$VIPSHOME/lib/pkgconfig"
+      - PYTHONPATH: "$VIPSHOME/lib/python3.6/site-packages"
+    override-build: |
+      git clone --depth 1 --branch v8.10.5 https://github.com/libvips/libvips.git
+      cd libvips && ./autogen.sh
+      make -j$(nproc) && make install
     stage-packages:
       - libaec0
       - libcairo2
@@ -83,3 +94,7 @@ parts:
       - libxext6
       - libxml2
       - libxrender1
+    stage:
+      [ ., ./* ]
+    prime:
+      [ ., ./* ]
